@@ -281,4 +281,21 @@ exports.config = {
     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
+
+    before : function (capabilities,specs){
+        global.expect = require('chai').expect;
+    },
+
+    afterTest: function (test){
+
+        if (!test.passed) {
+            const fs = require('fs');
+            const dir = './failure/';
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
+            browser.saveScreenshot(dir + test.title + '.png');
+        }
+    },
+    
 }
