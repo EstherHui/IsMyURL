@@ -12,24 +12,24 @@ describe('Login001 - ', () => {
 
     // });
 
-    it ('T002 - Login with blank all field', async() => {
+    // it ('T002 - Login with blank all field', async() => {
         
-        await loggingflow.LoginBlank();
+    //     await loggingflow.LoginBlank();
         
-        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
-        await loggingflow.ExpectMessage(message, 'Is Required');
+    //     let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
+    //     await loggingflow.ExpectMessage(message, 'Is Required');
 
-    });
+    // });
 
-    it ('T003 - Login with blank email', async() => {
+    // it ('T003 - Login with blank email', async() => {
         
        
-        await loggingflow.LoginBlankEmail();
+    //     await loggingflow.LoginBlankEmail();
         
-        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
-        await loggingflow.ExpectMessage(message, 'Email Is Required');
+    //     let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
+    //     await loggingflow.ExpectMessage(message, 'Email Is Required');
 
-    })
+    // })
 
     // it ('T004 - Login with blank password', async() => {
         
@@ -109,5 +109,6 @@ describe('Login001 - ', () => {
 //     });
 
 // });
+
 
 

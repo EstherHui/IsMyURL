@@ -7,8 +7,7 @@ export default class Registering {
     }
 
     async verifyRegisterDisplay(){
-
-
+        
 
     }
 
