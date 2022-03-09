@@ -1,41 +1,41 @@
 import LoginPage from  '../flow/Login';
 import testdata from '../test_data/Login001';
-//import SecurePage from '../pageobjects/secure.page';
+
+const data = testdata.credential;
+const loggingflow = new LoginPage(data);
+
 
 describe('Login001 - ', () => {
     //  it('cannot display', async () => {
 
-    //     const loginPage = new LoginPage();
-    //     await loginPage.verifyLogin();
+    //     await loggingflow.verifyLogin();
 
     // });
 
-    // it ('T002 - Login with blank all field', async() => {
+    it ('T002 - Login with blank all field', async() => {
         
-    //     const loginPage = new LoginPage();
-    //     await loginPage.LoginBlank();
+        await loggingflow.LoginBlank();
         
-    //     let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
-    //     await expect(message).toHaveTextContaining('Is Required');
+        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
+        await loggingflow.ExpectMessage(message, 'Is Required');
 
-    // });
+    });
 
-    // it ('T003 - Login with blank email', async() => {
+    it ('T003 - Login with blank email', async() => {
         
-    //     const blankemail = testdata.credential;
-    //     const loginPage = new LoginPage(blankemail);
-    //     await loginPage.LoginBlankEmail();
+       
+        await loggingflow.LoginBlankEmail();
         
-    //     let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
-    //     await expect(message).toHaveText('Email Is Required');
+        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
+        await loggingflow.ExpectMessage(message, 'Email Is Required');
 
-    // })
+    })
 
     // it ('T004 - Login with blank password', async() => {
         
     //     const blankpass = testdata.credential;
-    //     const loginPage = new LoginPage(blankpass);
-    //     await loginPage.LoginBlankPassword();
+    //     const loggingflow = new LoginPage(blankpass);
+    //     await loggingflow.LoginBlankPassword();
         
     //     let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div.error-wrapper.invalid.text-default.text-subtitle-2.font-bold > div');
     //     await expect(message).toHaveTextContaining('Password Is Required');
@@ -45,8 +45,8 @@ describe('Login001 - ', () => {
     // it ('T005 - Login with invalid password', async() => {
         
     //     const invalidpass = testdata.credential;
-    //     const loginPage = new LoginPage(invalidpass);
-    //     await loginPage.LoginInvalidPassword();        
+    //     const loggingflow = new LoginPage(invalidpass);
+    //     await loggingflow.LoginInvalidPassword();        
     //     let message = $('[class="toast-content"]');//cannot catch the message
     //     await expect(message).toHaveTextContaining('Invalid Email');
 
@@ -55,8 +55,8 @@ describe('Login001 - ', () => {
     // it ('T006 - Login with invalid email', async() => {
         
     //     const invalidemail = testdata.credential;
-    //     const loginPage = new LoginPage(invalidemail);
-    //     await loginPage.LoginInvalidEmail();        
+    //     const loggingflow = new LoginPage(invalidemail);
+    //     await loggingflow.LoginInvalidEmail();        
     //     let message = $('[class="toast-content"]');//cannot catch the message
     //     await expect(message).toHaveTextContaining('Invalid Email');
 
@@ -65,8 +65,8 @@ describe('Login001 - ', () => {
     // it ('T007 - Login with non-existing user', async() => {
         
     //     const nonexisting = testdata.credential;
-    //     const loginPage = new LoginPage(nonexisting);
-    //     await loginPage.LoginNonExisting();        
+    //     const loggingflow = new LoginPage(nonexisting);
+    //     await loggingflow.LoginNonExisting();        
     //     let message = $('[class="toast-content"]');//cannot catch the message
     //     await expect(message).toHaveTextContaining('Invalid Email Or Password');
 
@@ -76,8 +76,8 @@ describe('Login001 - ', () => {
     // it('T008 - Login Successfully',async () => {
 
     //     const success = testdata.credential
-    //     const loginPage = new LoginPage(success);
-    //     await loginPage.LoginSuccess();
+    //     const loggingflow = new LoginPage(success);
+    //     await loggingflow.LoginSuccess();
     //     await expect(browser).toHaveUrlContaining('home');
 
     // });
@@ -85,11 +85,11 @@ describe('Login001 - ', () => {
     // it('T009 - Login Successfully twice',async () => {
 
     //     const success = testdata.credential
-    //     const loginPage = new LoginPage(success);
-    //     await loginPage.LoginSuccess();
+    //     const loggingflow = new LoginPage(success);
+    //     await loggingflow.LoginSuccess();
     //     await expect(browser).toHaveUrlContaining('home');
-    //     await loginPage.Logout();//cannot get the selector code properly
-    //     // await loginPage.LoginSecond();
+    //     await loggingflow.Logout();//cannot get the selector code properly
+    //     // await loggingflow.LoginSecond();
     //     // await browser.pause(5000);
     //     // await expect(browser).toHaveUrlContaining('home');
 
@@ -100,14 +100,14 @@ describe('Login001 - ', () => {
 
 });
 
-describe('Login002 - ', () => {
+// describe('Login002 - ', () => {
 
-    it('T010 - Forgot Password display' , async() => {
+//     it('T010 - Forgot Password display' , async() => {
 
         
 
-    });
+//     });
 
-});
+// });
 
 

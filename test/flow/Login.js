@@ -16,7 +16,7 @@ export default class Logging {
     async LoginBlank(){
 
         await Login.open();
-        await Login.clickLoginBTN();
+        await Login.LoginCredential(null , null );
 
     }
 
@@ -72,6 +72,12 @@ export default class Logging {
     async Logout(){
 
         await Login.Logout();
+
+    }
+
+    async ExpectMessage(message, content){
+
+        await expect(await message).toHaveTextContaining(content);
 
     }
 
