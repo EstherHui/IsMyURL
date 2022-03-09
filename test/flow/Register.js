@@ -14,14 +14,14 @@ export default class Registering {
    async RegisterWithBlank(){
 
         await Register.open();
-        await Register.registerCredential(null , null , null);
+        await Register.RegisterCredential(null , null , null);
 
     }
 
     async RegisterWithBlankEmail(){
 
         await Register.open();
-        await Register.registerCredential(null , this._testdata.password , this._testdata.password);
+        await Register.RegisterCredential(null , this._testdata.password , this._testdata.password);
 
     }
 
