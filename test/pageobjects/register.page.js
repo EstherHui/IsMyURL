@@ -1,8 +1,8 @@
 import Page from './page';
 
-const EMAIL_TXB = '#root > ion-app > div > ion-content > div > div.RegisterPage_form_section__3Kbi_ > form > ion-list > div:nth-child(1) > ion-item > ion-input > input';
-const PASSWORD_TXB = '#root > ion-app > div > ion-content > div > div.RegisterPage_form_section__3Kbi_ > form > ion-list > div:nth-child(2) > ion-item > ion-input > input';
-const CONFIRMPASS_TXB = '#root > ion-app > div > ion-content > div > div.RegisterPage_form_section__3Kbi_ > form > ion-list > div:nth-child(3) > ion-item > ion-input > input';
+const EMAIL_TXB = 'input[name="email"]';
+const PASSWORD_TXB = 'input[name="password"]';
+const CONFIRMPASS_TXB = 'input[name = "confirm_password"]';
 const SIGNUP_BTN = '#root > ion-app > div > ion-content > div > div.RegisterPage_form_section__3Kbi_ > form > ion-button';
 //const THIRDPARTY_BTN = '';
 
@@ -26,3 +26,4 @@ class RegisterPage extends Page {
     }
 
 }
+export default new RegisterPage;

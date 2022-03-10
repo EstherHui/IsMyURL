@@ -12,17 +12,26 @@ export default class Registering {
 
     }
 
+    async verifyErrorMessage(content){
+
+        let message = $('div:nth-of-type(1) > .mt-1.text-danger.text-sm');
+        await expect(message).toHaveTextContaining(content);
+
+    }
+
    async RegisterWithBlank(){
 
         await Register.open();
-        await Register.registerCredential(null , null , null);
+        await Register.RegisterCredential(null , null , null);
 
     }
+
+
 
     async RegisterWithBlankEmail(){
 
         await Register.open();
-        await Register.registerCredential(null , this._testdata.password , this._testdata.password);
+        await Register.RegisterCredential(null , this._testdata.password , this._testdata.password);
 
     }
 

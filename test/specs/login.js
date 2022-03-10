@@ -100,14 +100,14 @@ describe('Login001 - ', () => {
 
 });
 
-describe('Login002 - ', () => {
+// describe('Login002 - ', () => {
 
-    it('T010 - Forgot Password display' , async() => {
+//     it('T010 - Forgot Password display' , async() => {
 
         
 
-    });
+//     });
 
-});
+// });
 
 
