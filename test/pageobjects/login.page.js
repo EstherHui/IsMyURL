@@ -6,11 +6,12 @@ const LOGIN_BTN = '#root > ion-app > div > ion-content > div > div.LoginPage_for
 const REMEMBER_ME = '#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > div > div > ion-checkbox';
 const RESETPASS_BTN = '#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > div > ion-router-link';
 const SIGNUP_BTN = '#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > div.flex.flex-wrap.justify-center.mb-12 > ion-router-link';
-const PROFILESET_BTN = 'ion-menu-button[class="ios button in-toolbar ion-activatable ion-focusable hydrated"]';
-const LOGOUT_BTN = 'button[type="button"]';
-const LOGOUTconfirm_BTN = '#ion-overlay-17 > div > div > ion-grid > ion-row > ion-col:nth-child(2) > ion-button';
+const PROFILESET_BTN = '.button.hydrated.in-toolbar.ion-activatable.ios > .button.button-default.button-solid.hydrated.in-toolbar.ion-activatable.ion-color.ion-color-light-primary.ios.mr-2';
+const LOGOUT_BTN = '.button.button-solid.hydrated.ion-activatable.ion-color.ion-color-medium-3.ios.m-5';
+const LOGOUTconfirm_BTN = 'ion-row .hydrated:nth-of-type(2) [expand]';
 const RESETemail_TXB = '#root > ion-app > div > ion-content > div > div.ForgetPassword_form_section__20GME > form > ion-list > div > ion-item > ion-input > input';
 const RESET_BTN = '#root > ion-app > div > ion-content > div > div.ForgetPassword_form_section__20GME > form > ion-button';
+const SIGNIN_BTN = '.button.button-clear.button-default.button-fat.hydrated.in-toolbar.ion-activatable.ion-color.ion-color-light.ios.mr-2';
 
 class LoginPage extends Page {
      
@@ -38,12 +39,24 @@ class LoginPage extends Page {
 
     // }
 
-    async clickLoginBTN(){
+    async clickSigninBTN(){
 
-        await (await $(LOGIN_BTN)).click();
+        await (await $(SIGNIN_BTN)).click();
         return this;
 
     }
+
+    // async doubleEmail(){
+
+    //     await(await $(EMAIL_TXB)).doubleClick()
+
+    // }
+
+    // async doublePass(){
+
+    //     await(await $(PASSWORD_TXB)).doubleClick()
+
+    // }
 
     async LoginCredential(email, password){
 
@@ -62,13 +75,13 @@ class LoginPage extends Page {
 
     }
 
-    // async ResetPasswordCredential(email){
+    async ResetPasswordCredential(email){
 
-    //     await(await $(RESETPASS_BTN)).click();
-    //     await(await $(RESETemail_TXB)).setValue(email);
-    //     await(await $(RESET_BTN)).click();
+        await(await $(RESETPASS_BTN)).click();
+        await(await $(RESETemail_TXB)).setValue(email);
+        await(await $(RESET_BTN)).click();
 
-    // }
+    }
 
 }
 

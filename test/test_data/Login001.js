@@ -1,7 +1,7 @@
 import Credential from "../entity/credentialLogin";
 
 const credential = new Credential();
-credential.email = 'cdef@gmail.com';
+credential.email = 'wohoo@gmail.com';
 credential.password = 'Qwerty!23';
 credential.invalid_email = 'cdef.gmail.com';
 credential.invalid_password = '12345678';

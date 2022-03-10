@@ -10,7 +10,7 @@ class RegisterPage extends Page {
 
     open() {
 
-        return super.open('register');
+        return super.open('register/');
 
     }
 
@@ -26,3 +26,4 @@ class RegisterPage extends Page {
     }
 
 }
+export default new RegisterPage();
