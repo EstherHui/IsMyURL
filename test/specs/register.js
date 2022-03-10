@@ -3,12 +3,12 @@ import testdata from '../test_data/Register001';
 
 describe('Register - ', () => {
 
-    // it('T001 - Register Page display' , async() => {
+    it('T001 - Register Page display' , async() => {
 
-    //     const register = new Register();
-    //     await register.verifyRegisterDisplay();
+        const register = new Register();
+        await register.verifyRegisterDisplay();
 
-    // });
+    });
 
     it('T002 - Register with all blank field', async() => {
 

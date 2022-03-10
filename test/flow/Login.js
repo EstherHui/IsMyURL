@@ -62,12 +62,20 @@ export default class Logging {
 
     }
 
+    async verifyLoginSuccess(){
+
+        await expect(browser).toHaveUrlContaining('home');
+
+    }
+
     async LoginSecond(){
 
-        await Login.open();
+        await Login.clickSigninBTN();
         await Login.LoginCredential(this._testdata.secondemail, this._testdata.secondpassword);
 
     }
+
+    
 
     async Logout(){
 
@@ -75,10 +83,36 @@ export default class Logging {
 
     }
 
-    async ExpectMessage(message, content){
-
+    async verifyErrorMessage(content){
+        
+        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div:nth-child(1) > div');
         await expect(await message).toHaveTextContaining(content);
 
     }
+
+    async verifyMessage(content){
+
+        let message = $('#root > ion-app > div > ion-content > div > div.LoginPage_form_section__2zB1z > form > ion-list > div.error-wrapper.invalid.text-default.text-subtitle-2.font-bold > div');
+        await expect(await message).toHaveTextContaining(content);
+
+    }
+
+    async verifyError(content){
+
+        let error = $('#shadow-root > div> div> div> div.toast-message');
+        await expect(await error).toHaveTextContaining(content);
+
+    }
+
+    async ResetPassword(email){
+
+        await Login.open();
+        await Login.ResetPasswordCredential(email)
+
+    }
+
+
+
+
 
 }
