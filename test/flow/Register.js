@@ -26,12 +26,17 @@ export default class Registering {
 
     }
 
-
-
     async RegisterWithBlankEmail(){
 
         await Register.open();
         await Register.RegisterCredential(null , this._testdata.password , this._testdata.password);
+
+    }
+
+    async RegisterWithInvalidEmail(){
+
+        await Register.open();
+        await Register.RegisterCredential(this._testdata.invalidemail , this._testdata.password, this._testdata.password);
 
     }
 

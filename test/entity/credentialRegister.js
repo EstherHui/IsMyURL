@@ -14,4 +14,12 @@ export default class Credential {
         this._password = value;
     }
 
+    get invalidemail(){
+        return this._invalidemail
+    }
+
+    set invalidemail(value){
+        this._invalidemail = value;
+    }
+
 }
