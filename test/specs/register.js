@@ -40,7 +40,7 @@ describe('Register - ', () => {
     it('T005 - Register with email existing on system', async() => {
 
         
-        await registerflow.RegisterWithInvalidEmail();
+        await registerflow.RegisterWithExistingEmai();
         await registerflow.verifyErrorMessage('Invalid Email Format');
 
     });

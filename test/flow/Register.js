@@ -19,6 +19,13 @@ export default class Registering {
 
     }
 
+    async verifyError(content){
+
+    let error = $('.hydrated.ion-color.ion-color-danger.ios');
+    await expect(error).toHaveTextContaining(content);
+
+    }
+
    async RegisterWithBlank(){
 
         await Register.open();
@@ -37,6 +44,13 @@ export default class Registering {
 
         await Register.open();
         await Register.RegisterCredential(this._testdata.invalidemail , this._testdata.password, this._testdata.password);
+
+    }
+
+    async RegisterWithExistingEmail(){
+
+        await Register.open();
+        await Register.RegisterCredential(this._testdata.existingemail , this._testdata.password, this._testdata.password);
 
     }
 
