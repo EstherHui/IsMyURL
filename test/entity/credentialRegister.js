@@ -49,14 +49,14 @@ export default class Credential {
         return this._dpassword;
     }
     set dpassword(value){
-        this._dpsasword = value;
+        this._dpassword = value;
     }
 
     get epassword(){
         return this._epassword;
     }
     set epassword(value){
-        this._epsasword = value;
+        this._epassword = value;
     }
 
     get ConfirmPassword2(){
@@ -64,6 +64,48 @@ export default class Credential {
     }
     set ConfirmPassword2(value){
         this._ConfirmPassword2 = value;
+    }
+
+    get verifycodeA(){
+        return this._verifycodeA;
+    }
+    set verifycodeA(value){
+        this._verifycodeA = value;
+    }
+
+    get verifycodeB(){
+        return this._verifycodeB;
+    }
+    set verifycodeB(value){
+        this._verifycodeB = value;
+    }
+
+    get verifycodeC(){
+        return this._verifycodeC;
+    }
+    set verifycodeC(value){
+        this._verifycodeC = value;
+    }
+
+    get verifycodeD(){
+        return this._verifycodeD;
+    }
+    set verifycodeD(value){
+        this._verifycodeD = value;
+    }
+
+    get verifycodeE(){
+        return this._verifycodeE;
+    }
+    set verifycodeE(value){
+        this._verifycodeE = value;
+    }
+
+    get verifycodeF(){
+        return this._verifycodeF;
+    }
+    set verifycodeF(value){
+        this._verifycodeF = value;
     }
 
 }
