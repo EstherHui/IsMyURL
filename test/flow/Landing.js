@@ -48,5 +48,25 @@ export default class Landingg{
 
     }
 
+    async AccessPlan(){
+
+        await Landing.open();
+        await Landing.clickPlanBTN();
+
+        let element = $('[class = "text-h2 text-white mb-4"]');
+        await expect(element).toBePresent();
+
+    }
+
+    async AccessPlanGetStart(){
+
+        await Landing.open();
+        await Landing.clickGetStart();
+
+        let element = $('[class = "text-h2 text-white mb-4"]');
+        await expect(element).toBePresent();
+
+    }
+
 
 }
