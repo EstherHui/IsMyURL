@@ -9,8 +9,10 @@ export default class Logging {
     async verifyLogin(){
         
         await Login.open();
-        await expect(await Login.isEmailTXBdisplay).toBeDisplayed();
-
+        await expect(await Login.isEmailTXBdisplay()).toBeDisplayed();
+        await expect(await Login.isPasswordTXBdisplay()).toBeDisplayed();
+        await expect(await Login.isLoginBTNdisplay()).toBeDisplayed();
+        
     }
 
     async LoginBlank(){
@@ -104,12 +106,52 @@ export default class Logging {
 
     }
 
-    async ResetPassword(email){
+    async verifyResetPassDisplayed(){
 
         await Login.open();
-        await Login.ResetPasswordCredential(email)
+        await Login.clickResetPass();
+        await expect(await Login.isResetEmailTXBDisplayed()).toBeDisplayed();
+        await expect(await Login.isResetSubmitBTNDisplayed()).toBeDisplayed();
 
     }
+
+    async ResetPasswordBlank(){
+
+        await Login.open();
+        await Login.ResetPasswordCredential(null);
+
+    }
+
+    async ResetPasswordInvalid(){
+
+        await Login.open();
+        await Login.ResetPasswordCredential(this._testdata.invalid_email);
+
+    }
+
+    async ResetPasswordSuccess(){
+
+        await Login.open();
+        await Login.ResetPasswordCredential(this._testdata.email);
+        await Login.verifycode(this._testdata.verifycodeA, this._testdata.verifycodeB, this._testdata.verifycodeC, this._testdata.verifycodeD, this._testdata.verifycodeE, this._testdata.verifycodeF);
+
+    }
+
+    async verifyResetError(content){
+
+        let message = $('.mt-1.text-danger.text-sm');
+        await expect(await message).toHaveTextContaining(content);
+
+    }
+
+    async verifyResetSuccess(content){
+
+        let success = $('');
+        await expect(await success).toHaveTextContaining(content);
+
+    }
+
+    
 
 
 

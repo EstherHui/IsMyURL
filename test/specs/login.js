@@ -6,9 +6,9 @@ const loggingflow = new LoginPage(data);
 
 
 describe('Login001 - ', () => {
-    //  it('cannot display', async () => {
+    //  it('T001 - Verify Display ', async () => {
 
-    //     await loggingflow.verifyLogin();
+    //     await loggingflow.verifyLogin();// return not displayed
 
     // });
 
@@ -82,15 +82,37 @@ describe('Login001 - ', () => {
 
 });
 
-// describe('Login002 - ', () => {
+describe('Login002 - Reset Password', () => {
 
-//     it('T010 - Forgot Password display' , async() => {
+    // it('T010 - Forgot Password display' , async() => {
 
-        
+    //     await loggingflow.verifyResetPassDisplayed();
 
-//     });
+    // });
 
-// });
+    it('T011 - Reset Password with blank all field' , async() => {
+
+        await loggingflow.ResetPasswordBlank();
+        await loggingflow.verifyResetError('Is Required');
+
+    });
+
+    it('T012 - Reset Password with invalid email' , async() => {
+
+        await loggingflow.ResetPasswordInvalid();
+        await loggingflow.verifyResetError('Invalid Email');
+
+    });
+
+    // it('T013 - Reset password success' , async() => {
+
+    //     await loggingflow.ResetPasswordSuccess();
+    //     //await loggingflow.verifyResetSuccess('Successfully');
+
+    // });
+
+
+});
 
 
 

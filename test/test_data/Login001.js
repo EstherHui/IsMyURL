@@ -9,6 +9,12 @@ credential.emailB = 'azsxd@gmail.com';
 credential.passwordB = 'poilk!23';
 credential.secondemail = 'pop@gmail.com';
 credential.secondpassword = 'Qwerty!23';
+credential.verifycodeA = '1';
+credential.verifycodeB = '2';
+credential.verifycodeC = '3';
+credential.verifycodeD = '4';
+credential.verifycodeE = '5';
+credential.verifycodeF = '6';
 
 
 const data= {

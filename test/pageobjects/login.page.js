@@ -12,6 +12,12 @@ const LOGOUTconfirm_BTN = 'ion-row .hydrated:nth-of-type(2) [expand]';
 const RESETemail_TXB = '#root > ion-app > div > ion-content > div > div.ForgetPassword_form_section__20GME > form > ion-list > div > ion-item > ion-input > input';
 const RESET_BTN = '#root > ion-app > div > ion-content > div > div.ForgetPassword_form_section__20GME > form > ion-button';
 const SIGNIN_BTN = '.button.button-clear.button-default.button-fat.hydrated.in-toolbar.ion-activatable.ion-color.ion-color-light.ios.mr-2';
+// const verifycodeA = '';
+// const verifycodeB = '';
+// const verifycodeC = '';
+// const verifycodeD = '';
+// const verifycodeE = '';
+// const verifycodeF = '';
 
 class LoginPage extends Page {
      
@@ -21,23 +27,23 @@ class LoginPage extends Page {
 
     }
 
-    // async isEmailTXBdisplay() {
+    async isEmailTXBdisplay() {
 
-    //     return (await $(EMAIL_TXB));
+        return  (await $(EMAIL_TXB)).isDisplayed();
 
-    // }
+    }
 
-    // async isPasswordTXBdisplay(){
+    async isPasswordTXBdisplay(){
 
-    //     return $(PASSWORD_TXB).isDisplayed();
+        return (await $(PASSWORD_TXB)).isDisplayed();
 
-    // }
+    }
 
-    // async isLoginBTNdisplay(){
+    async isLoginBTNdisplay(){
 
-    //     return $(LOGIN_BTN).isDisplayed();
+        return (await $(LOGIN_BTN)).isDisplayed();
 
-    // }
+    }
 
     async clickSigninBTN(){
 
@@ -45,18 +51,6 @@ class LoginPage extends Page {
         return this;
 
     }
-
-    // async doubleEmail(){
-
-    //     await(await $(EMAIL_TXB)).doubleClick()
-
-    // }
-
-    // async doublePass(){
-
-    //     await(await $(PASSWORD_TXB)).doubleClick()
-
-    // }
 
     async LoginCredential(email, password){
 
@@ -73,7 +67,27 @@ class LoginPage extends Page {
         await(await $(LOGOUT_BTN)).click();
         await(await $(LOGOUTconfirm_BTN)).click();
 
+        return this;
+
     }
+
+    async isResetEmailTXBDisplayed(){
+
+         return (await $(RESETemail_TXB)).isDisplayed();
+
+    }
+
+    async isResetSubmitBTNDisplayed(){
+
+        return (await $(RESET_BTN)).isDisplayed();
+
+   }
+
+    async clickResetPass(){
+
+        return (await $(RESETPASS_BTN)).click();
+
+   }
 
     async ResetPasswordCredential(email){
 
@@ -81,6 +95,20 @@ class LoginPage extends Page {
         await(await $(RESETemail_TXB)).setValue(email);
         await(await $(RESET_BTN)).click();
 
+        return this;
+
+    }
+
+    async verifycode(A,B,C,D,E,F){
+
+        await(await $(verifycodeA)).setValue(A);
+        await(await $(verifycodeB)).setValue(B);
+        await(await $(verifycodeC)).setValue(C);
+        await(await $(verifycodeD)).setValue(D);
+        await(await $(verifycodeE)).setValue(E);
+        await(await $(verifycodeF)).setValue(F);
+
+        return this;
     }
 
 }
