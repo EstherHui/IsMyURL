@@ -14,4 +14,40 @@ export default class Credentia{
         this._password = value;
     }
 
+    get destination(){
+        return this._destination;
+    }
+    set destination(value){
+        this._destination = value;
+    }
+
+    get title(){
+        return this._title;
+    }
+    set title(value){
+        this._title = value;
+    }
+
+    get domain(){
+        return this._domain;
+    }
+    set domain(value){
+        this._domain = value;
+    }
+
+    get slash(){
+        return this.slash;
+    }
+    set slash(value){
+        this._slash = value;
+    }
+
+    get invalidURL(){
+        return this._invalidURL;
+    }
+    set invalidURL(value){
+        this._invalidURL = value;
+    }
+    
+
 }
