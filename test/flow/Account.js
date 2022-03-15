@@ -185,7 +185,6 @@ export default class AccountSetting {
     async ChangeEmailSuccess(){
 
         await Account.ChangeEmailCredential(this._testdata.newemail);
-        
 
     }
 

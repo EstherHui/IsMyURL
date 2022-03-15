@@ -141,29 +141,35 @@ describe('AccountSetting003 - Change Email', () => {
 
     // });
 
-    it('T015 - Change Email with blank all field', async() => {
+    // it('T015 - Change Email with blank all field', async() => {
+        
+    //     await accountflow.LoginNew();
+    //     // await accountflow.Refresh();
+    //     await accountflow.accessChangeEmail();
+    //     await accountflow.ChangeEmailBlank();
+    //     await accountflow.veriffyChangeEmailMessage('New Email Is Required');
+
+    // });
+
+    // it('T016 - Change Email with invalid email', async() => {
+        
+        // // await accountflow.LoginNew();
+        // await accountflow.Refresh();
+        // await accountflow.accessChangeEmail();
+        // await accountflow.ChangeEmailInvalid();
+        // await accountflow.veriffyChangeEmailMessage('Invalid Email');
+
+    // });
+
+    it('T017 - Change Email successfully', async() => {
         
         await accountflow.LoginNew();
         // await accountflow.Refresh();
         await accountflow.accessChangeEmail();
-        await accountflow.ChangeEmailBlank();
-        await accountflow.veriffyChangeEmailMessage('New Email Is Required');
+        await accountflow.ChangeEmailSuccess();
+        await accountflow.verifyChangePassSuccess
 
     });
-
-    it('T016 - Change Email with invalid email', async() => {
-        
-        // await accountflow.LoginNew();
-        await accountflow.Refresh();
-        await accountflow.accessChangeEmail();
-        await accountflow.ChangeEmailInvalid();
-        await accountflow.veriffyChangeEmailMessage('Invalid Email');
-
-    });
-
-    // it('T017 - Change Email successfully', async() => {
-        
-    // });
 
     // it('T018 - Login with new email', async() => {
         
