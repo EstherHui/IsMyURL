@@ -11,6 +11,16 @@ const CURRETPASS_TXB = 'input[name="current_password"]';
 const NEWPASS_TXB = 'input[name="password"]';
 const CONFIRMPASS_TXB = 'input[name="confirm_password"]';
 const SUBMIT_BTN = 'ion-button[type="submit"]';
+const CHANGEEMAIL_BTN ='.flex-col:nth-of-type(2) [class="flex justify-between items-center text-default text-subtitle-1 font-semibold cursor-pointer p-5"]:nth-of-type(5)';
+const NEWEMAIL_TXB= 'input[name="email"]';
+const VERIFY_BTN ='.button.button-block.button-solid.hydrated.ion-activatable.ios';
+const CONFIRMOTP_BTN ='.button.button-fat.button-solid.hydrated.ion-activatable.ion-color.ion-color-primary.ios.ml-auto';
+const verifycodeA = 'input[aria-label="Please enter verification code. Character 1"]';
+const verifycodeB = 'input[aria-label="Character 2"]';
+const verifycodeC = 'input[aria-label="Character 3"]';
+const verifycodeD = 'input[aria-label="Character 4"]';
+const verifycodeE = 'input[aria-label="Character 5"]';
+const verifycodeF = 'input[aria-label="Character 6"]';
 
 class AccountPage extends Page {
      
@@ -60,6 +70,32 @@ class AccountPage extends Page {
         await(await $(LOGOUT_BTN)).click();
         await browser.pause(1000);
         await(await $(LOGOUTCONFIRM_BTN)).click();
+
+    }
+
+    async clickChangeEmailBTN(){
+
+        await(await $(CHANGEEMAIL_BTN)).click();
+
+    }
+
+    async ChangeEmailCredential(newemail){
+
+        await(await $(NEWEMAIL_TXB)).setValue(newemail);
+        await(await $(VERIFY_BTN)).click();
+
+    }
+
+    async verifycode(A,B,C,D,E,F){
+
+        await(await $(verifycodeA)).setValue(A);
+        await(await $(verifycodeB)).setValue(B);
+        await(await $(verifycodeC)).setValue(C);
+        await(await $(verifycodeD)).setValue(D);
+        await(await $(verifycodeE)).setValue(E);
+        await(await $(verifycodeF)).setValue(F);
+        await(await $(CONFIRMOTP_BTN)).click();
+
 
     }
 

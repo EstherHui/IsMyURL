@@ -35,4 +35,60 @@ export default class Credentia{
         this._passwordB = value;
     }
 
+    get invalidemail(){
+        return this._invalidemail;
+    }
+    set invalidemail(value){
+        this._invalidemail = value;
+    }
+
+    get newemail(){
+        return this._newemail;
+    }
+    set newemail(value){
+        this._newemail = value;
+    }
+
+    get verifycodeA(){
+        return this._verifycodeA;
+    }
+    set verifycodeA(value){
+        this._verifycodeA = value;
+    }
+
+    get verifycodeB(){
+        return this._verifycodeB;
+    }
+    set verifycodeB(value){
+        this._verifycodeB = value;
+    }
+
+    get verifycodeC(){
+        return this._verifycodeC;
+    }
+    set verifycodeC(value){
+        this._verifycodeC = value;
+    }
+
+    get verifycodeD(){
+        return this._verifycodeD;
+    }
+    set verifycodeD(value){
+        this._verifycodeD = value;
+    }
+
+    get verifycodeE(){
+        return this._verifycodeE;
+    }
+    set verifycodeE(value){
+        this._verifycodeE = value;
+    }
+
+    get verifycodeF(){
+        return this._verifycodeF;
+    }
+    set verifycodeF(value){
+        this._verifycodeF = value;
+    }
+
 }

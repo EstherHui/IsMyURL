@@ -74,6 +74,13 @@ export default class AccountSetting {
 
     }
 
+    async veriffyChangeEmailMessage(content){
+
+        let message = await $('.mt-1.text-danger.text-sm');
+        await expect(message).toHaveTextContaining(content);
+
+    }
+
     async verifyLoginSuccess(){
 
         await expect(browser).toHaveUrlContaining('home');
@@ -156,6 +163,30 @@ export default class AccountSetting {
 
     }
 
+    async accessChangeEmail(){
 
+        await Account.clickAccountSetBTN();
+        await Account.clickChangeEmailBTN();        
+
+    }
+
+    async ChangeEmailBlank(){
+
+        await Account.ChangeEmailCredential(null);
+
+    }
+
+    async ChangeEmailInvalid(){
+
+        await Account.ChangeEmailCredential(this._testdata.invalidemail);
+
+    }
+
+    async ChangeEmailSuccess(){
+
+        await Account.ChangeEmailCredential(this._testdata.newemail);
+        
+
+    }
 
 }
