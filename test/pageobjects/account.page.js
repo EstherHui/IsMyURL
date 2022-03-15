@@ -71,11 +71,16 @@ class AccountPage extends Page {
         await browser.pause(1000);
         await(await $(LOGOUTCONFIRM_BTN)).click();
 
+        return this;
+
     }
 
     async clickChangeEmailBTN(){
 
         await(await $(CHANGEEMAIL_BTN)).click();
+
+        return this;
+
 
     }
 
@@ -83,6 +88,8 @@ class AccountPage extends Page {
 
         await(await $(NEWEMAIL_TXB)).setValue(newemail);
         await(await $(VERIFY_BTN)).click();
+
+        return this;
 
     }
 
@@ -96,6 +103,7 @@ class AccountPage extends Page {
         await(await $(verifycodeF)).setValue(F);
         await(await $(CONFIRMOTP_BTN)).click();
 
+        return this;
 
     }
 
