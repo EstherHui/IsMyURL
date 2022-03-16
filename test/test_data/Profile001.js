@@ -9,6 +9,9 @@ credential.domain ='isMyUrl';
 credential.slash = 'TomatoCabbage';
 credential.tag = '';
 credential.invalidURL = 'Tomato+Cabbage+SliceChicken+Hotdog+Apple'
+credential.filterTXT = '';
+credential.filetTag ='';
+credential.search ='';
 
 const data= {
     

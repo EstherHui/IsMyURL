@@ -75,5 +75,38 @@ export default class Profilepage{
     }
 
 
+    async FilterLink(filter){
+
+        if(filter ==1){
+            await Profile.FilterCredential(null, this._testdata.filterTXT);
+        }
+        
+        else if (filter == 2){
+            await Profile.FilterCredential(this._testdata.filetTag, null);
+        }
+
+    }
+
+    async SearchLink(){
+
+        await Profile.SearchCredential(this._testdata.search);
+
+    }
+
+    async Notice(){
+
+        await Profile.NoticeBTNclick();
+
+    }
+
+    async verifyExpiryDisplay(){
+
+        await expect(await Profile.ExpiryDateTXBisDisplayed()).toBeDisplayed();
+        await expect(await Profile.ExpiryTimeTXBisDisplayed()).toBeDisplayed();
+        await expect(await Profile.NewURLTXBisDisplayed()).toBeDisplayed();
+
+    }
+
+
 
 }

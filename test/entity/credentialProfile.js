@@ -48,6 +48,27 @@ export default class Credentia{
     set invalidURL(value){
         this._invalidURL = value;
     }
+
+    get filterTXT(){
+        return this._filterTXT;
+    }
+    set filterTXT(value){
+        this._filterTXT = value;
+    }
+
+    get filetTag(){
+        return this._filetTag;
+    }
+    set filetTag(value){
+        this._filetTag = value;
+    }
+
+    get search(){
+        return this._search;
+    }
+    set search(value){
+        this._search = value;
+    }
     
 
 }

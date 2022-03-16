@@ -18,6 +18,14 @@ const LINKSLASH_TXB ='';
 const TAG_SLC = '';
 const ADVANCE_BTN ='';
 const CREATE_BTN = ''
+const FILTER_BTN = '';
+const FILTEROK_BTN ='';
+const FILTERTAG_TXB = '';
+const TAGS_SLC ='';
+const SEARCHBAR_TXB ='';
+const EXPIRYDATE_TXB ='';
+const EXPIRYTIME_TXB ='';
+const NEWURL_TXB ='';
 
 class Profile extends Page{
 
@@ -112,9 +120,34 @@ class Profile extends Page{
 
     }
 
+    async ExpiryDateTXBisDisplayed(){
+
+        return (await $(EXPIRYDATE_TXB)).isDisplayed();
+
+    }
+
+    async ExpiryTimeTXBisDisplayed(){
+
+        return (await $(EXPIRYTIME_TXB)).isDisplayed();
+
+    }
+
+    async NewURLTXBisDisplayed(){
+
+        return (await $(NEWURL_TXB)).isDisplayed();
+
+    }
+    
+
     async CreateLinkBTNisDisplayed(){
 
         return (await $(CREATENEWLINK_BTN)).isDisplayed();
+
+    }
+
+    async NoticeBTNclick(){
+
+        return(await $(NOTICE_BTN)).click();
 
     }
 
@@ -136,6 +169,36 @@ class Profile extends Page{
         await(await $(LINKSLASH_TXB)).setValue(slash);
         await(await $(TAG_SLC)).selectByVisibleText(tag);
 
+        return this;
+
+    }
+
+    async FilterCredential(tags, spectxt){
+
+        await(await $(FILTER_BTN)).click();
+        await(await $(FILTERTAG_TXB)).setValue(spectxt);
+        await(await $(TAG_SLC)).selectByVisibleText(tags);//need to modify follow the website
+        await(await $(FILTEROK_BTN)).click();
+
+        return this;
+
+    }
+
+    async SearchCredential(search){
+
+        await(await $(SEARCHBAR_TXB)).setValue(search);
+
+        return this;
+
+    }
+
+    async LinkExpiry(date, time){
+
+        await(await $(ADVANCE_BTN)).click();
+        await(await $(EXPIRYDATE_TXB)).setValue(date);
+        await(await $(EXPIRYTIME_TXB)).setValue(time);
+
+        return this;
     }
 
 
