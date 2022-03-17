@@ -69,6 +69,48 @@ export default class Credentia{
     set search(value){
         this._search = value;
     }
-    
+
+    get camptitle(){
+        return this._camptitle;
+    }
+    set camptitle(value){
+        this._camptitle = value;
+    }
+
+    get desc(){
+        return this._desc;
+    }
+    set desc(value){
+        this._desc = value;
+    }
+
+    get channel(){
+        return this._channel;
+    }
+    set channel(value){
+        this._channel = value;
+    }
+
+    get destinationcamp(){
+        return this._destinationcamp;
+    }
+    set destinationcamp(value){
+        this._destinationcamp = value;
+    }
+
+    get domaincamp(){
+        return this._domaincamp;
+    }
+    set domaincamp(value){
+        this._domaincamp = value;
+    }
+
+    get slashcamp(){
+        return this._slashcamp;
+    }
+    set slashcamp(value){
+        this._slashcamp = value;
+    }
+
 
 }

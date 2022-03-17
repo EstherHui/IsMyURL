@@ -5,6 +5,8 @@ import testdata from '../test_data/Profile001';
 const data = testdata.credential;
 const profileflow = new Profilepage(data);
 
+//need to add verify fail and success after finalize
+
 describe('Profile001 - Profile ', () => {
     
 
@@ -134,26 +136,26 @@ describe('Profile005 - Notification ', () => {
 describe('Profile006 - Link Expiry ', () => {
     
 
-    it ('T015 - Link Expiry Display', async() => {
+    // it ('T015 - Link Expiry Display', async() => {
         
-        await profileflow.Login();
-        
-
-    });
-
-    it ('T016 - link expiry on the time', async() => {
-        
-        await profileflow.Login();
+    //     await profileflow.Login();
         
 
-    });
+    // });
 
-    it ('T017 - shorten redirect user to the new link when the current link expiry', async() => {
+    // it ('T016 - link expiry on the time', async() => {
         
-        await profileflow.Login();
+    //     await profileflow.Login();
         
 
-    });
+    // });
+
+    // it ('T017 - shorten redirect user to the new link when the current link expiry', async() => {
+        
+    //     await profileflow.Login();
+        
+
+    // });
 
 
 });
@@ -161,14 +163,76 @@ describe('Profile006 - Link Expiry ', () => {
 describe('Profile006 - Link Analysia ', () => {
     
 
-    it ('T018 - data analysis display', async() => {
+    // it ('T018 - data analysis display', async() => {
+        
+    //     await profileflow.Login();
+        
+
+    // });
+
+    // it ('T019 - data accuracy', async() => {
+        
+    //     await profileflow.Login();
+        
+
+    // });
+
+});
+
+describe('Profile007 - Campaign ', () => {
+    
+
+    it ('T020 - Create Campaign Display', async() => {
+        
+        await profileflow.Login();
+        await profileflow.verifyCampaignDisplay();
+        
+
+    });
+
+    it ('T021 - create campaign with blank all field', async() => {
         
         await profileflow.Login();
         
 
     });
 
-    it ('T019 - data accuracy', async() => {
+    it ('T022 - create campaign with blank title', async() => {
+        
+        await profileflow.Login();
+        
+
+    });
+
+    it ('T023 - create campaign with blank channel', async() => {
+        
+        await profileflow.Login();
+        
+
+    });
+
+    it ('T024 - create campaign with blank destination URL', async() => {
+        
+        await profileflow.Login();
+        
+
+    });
+
+    it ('T025 - create campaign with blank Slash', async() => {
+        
+        await profileflow.Login();
+        
+
+    });
+
+    it ('T026 - create campaign with invalid destination URL', async() => {
+        
+        await profileflow.Login();
+        
+
+    });
+
+    it ('T027 - data accuracy', async() => {
         
         await profileflow.Login();
         

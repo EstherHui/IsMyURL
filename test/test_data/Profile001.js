@@ -12,6 +12,12 @@ credential.invalidURL = 'Tomato+Cabbage+SliceChicken+Hotdog+Apple'
 credential.filterTXT = '';
 credential.filetTag ='';
 credential.search ='';
+credential.camptitle ='';
+credential.desc ='';
+credential.channel ='';
+credential.destinationcamp ='';
+credential.domaincamp ='';
+credential.slashcamp ='';
 
 const data= {
     

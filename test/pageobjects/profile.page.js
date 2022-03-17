@@ -26,6 +26,16 @@ const SEARCHBAR_TXB ='';
 const EXPIRYDATE_TXB ='';
 const EXPIRYTIME_TXB ='';
 const NEWURL_TXB ='';
+const CAMPAIGN_BTN ='';
+const CREATCAMP_BTN = '';
+const CAMPTITLE_TXB = '';
+const CAMPDESC_TXB = '';
+const CHANNEL_LIST = '';
+const CAMPDESTINATION_TXB = '';
+const CAMPDOMAIN_SLC ='';
+const CAMPSLASH_TBX ='';
+const CAMPCREATE_BTN = '';
+const CAMPADDLINK_BTN ='';
 
 class Profile extends Page{
 
@@ -145,6 +155,48 @@ class Profile extends Page{
 
     }
 
+    async CampTitletxbisDisplayed(){
+
+        return (await $(CAMPTITLE_TXB)).isDisplayed();
+
+    }
+
+    async CampDesctxbisDisplayed(){
+
+        return (await $(CAMPDESC_TXB)).isDisplayed();
+
+    }
+
+    async CampChannelisDisplayed(){
+
+        return (await $(CHANNEL_LIST)).isDisplayed();
+
+    }
+
+    async CampDestinationisDisplayed(){
+
+        return (await $(CAMPDESC_TXB)).isDisplayed();
+
+    }
+
+    async CampDomainSLCisDisplayed(){
+
+        return (await $(CAMPDOMAIN_SLC)).isDisplayed();
+
+    }
+
+    async CampSlashTXBisDisplayed(){
+
+        return (await $(CAMPSLASH_TBX)).isDisplayed();
+
+    }
+
+    async CampCreateBTNisDisplayed(){
+
+        return (await $(CAMPCREATE_BTN)).isDisplayed();
+
+    }
+
     async NoticeBTNclick(){
 
         return(await $(NOTICE_BTN)).click();
@@ -201,6 +253,19 @@ class Profile extends Page{
         return this;
     }
 
+    async CreateCampaignCredential(title, desc, channel, destination, domain, slash){
+
+        await(await $(FEATURES_BTN)).click();
+        await(await $(CAMPAIGN_BTN)).click();
+        await(await $(CAMPTITLE_TXB)).setValue(title);
+        await(await $(CAMPDESC_TXB)).setValue(desc);
+        await(await $(CHANNEL_LIST)).selectByVisibleText(channel);
+        await(await $(CAMPDESTINATION_TXB)).setValue(destination);
+        await(await $(CAMPDOMAIN_SLC)).selectByVisibleText(domain);
+        await(await $(CAMPSLASH_TBX)).setValue(slash);
+        await(await $(CAMPCREATE_BTN)).click();
+
+    }
 
 
 

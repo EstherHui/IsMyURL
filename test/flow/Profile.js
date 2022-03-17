@@ -107,6 +107,63 @@ export default class Profilepage{
 
     }
 
+    async verifyCampaignDisplay(){
 
+        //Not sure finalize display should be modify after come out
+        await expect(await Profile.CampTitletxbisDisplayed()).toBeDisplayed();
+        await expect(await Profile.CampDesctxbisDisplayed()).toBeDisplayed();
+        await expect(await Profile.CampChannelisDisplayed()).toBeDisplayed();//here should be modify
+        await expect(await Profile.CampDestinationisDisplayed()).toBeDisplayed();
+        await expect(await Profile.CampDomainSLCisDisplayed()).toBeDisplayed();
+        await expect(await Profile.CampSlashTXBisDisplayed()).toBeDisplayed();
+        await expect(await Profile.CampCreateBTNisDisplayed()).toBeDisplayed();//should make sure
+
+    }
+
+    async Campaign(testcase){
+
+        if(testcase == 21){
+
+            await Profile.CreateCampaignCredential(null,null,null,null,null,null);
+
+        }
+
+        else if(testcase == 22){
+
+            await Profile.CreateCampaignCredential(null,this._testdata.desc, this._testdata.channel,this._testdata.destinationcamp, this._testdata.domaincamp, this._testdata.slashcamp);
+
+        }
+
+        else if(testcase == 23){
+
+            await Profile.CreateCampaignCredential(this._testdata.camptitle,this._testdata.desc, null,this._testdata.destinationcamp, this._testdata.domaincamp, this._testdata.slashcamp);
+
+        }
+
+        else if(testcase == 24){
+
+            await Profile.CreateCampaignCredential(this._testdata.camptitle,this._testdata.desc, this._testdata.channel,null, this._testdata.domaincamp, this._testdata.slashcamp);
+
+        }
+
+        else if(testcase == 25){
+
+            await Profile.CreateCampaignCredential(this._testdata.camptitle,this._testdata.desc, this._testdata.channel,this._testdata.destinationcamp, this._testdata.domaincamp,null);
+
+        }
+
+        else if(testcase == 26){
+
+            await Profile.CreateCampaignCredential(this._testdata.camptitle,this._testdata.desc, this._testdata.channel,this._testdata.invalidURL, this._testdata.domaincamp,this._testdata.slashcamp);
+
+        }
+
+        else if(testcase == 27){
+
+            await Profile.CreateCampaignCredential(this._testdata.camptitle,this._testdata.desc, this._testdata.channel,this._testdata.destinationcamp, this._testdata.domaincamp,this._testdata.slashcamp);
+
+        }
+
+    }
 
 }
